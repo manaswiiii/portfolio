@@ -1,0 +1,10 @@
+# Private reference docs: never publish
+profile.pdf
+
+# Old resume versions and the original with phone number: never publish
+ml_resume.pdf
+swe_resume.pdf
+resume_with_phone.pdf
+
+# macOS clutter
+.DS_Store

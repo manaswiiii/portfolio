@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Manaswi Kalyan · ML Engineer &amp; Researcher</title>
+  <meta name="description" content="Manaswi Kalyan: MS CS student at USC doing deep-learning research at the Laboratory of Neuro Imaging, building rigorous ML systems and production-grade LLM and MLOps projects.">
+  <meta property="og:title" content="Manaswi Kalyan · ML Engineer &amp; Researcher">
+  <meta property="og:description" content="Rigorous ML systems: I implement methods from papers, run them at scale, and stay skeptical of the results.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f766e'/%3E%3Ctext x='32' y='42' font-family='system-ui,sans-serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3EMK%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Apply a saved theme before the page paints, so there's no light/dark flash. -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Manaswi Kalyan, back to top">MK</a>
+      <nav aria-label="Primary">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+          <span class="visually-hidden">Menu</span>
+          <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+        <ul id="nav-links" class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch color theme">
+        <svg class="icon-moon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="icon-sun" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section id="top" class="hero">
+      <div class="container">
+        <p class="eyebrow">MS CS @ USC · graduating May 2027</p>
+        <h1>Manaswi Kalyan</h1>
+        <p class="tagline">ML engineer and researcher building rigorous ML systems. I implement methods from papers, run them at scale, and stay skeptical of the results.</p>
+
+        <ul class="social" aria-label="Profiles">
+          <li>
+            <a href="https://github.com/manaswiiii" rel="noopener" target="_blank">
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              GitHub
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/manaswi-kalyan-5a318822a" rel="noopener" target="_blank">
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+              LinkedIn
+            </a>
+          </li>
+          <li>
+            <a href="mailto:mkalyan@usc.edu">
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              Email
+            </a>
+          </li>
+        </ul>
+
+        <div class="cta">
+          <a class="btn btn-primary" href="resume.pdf" download="Manaswi_Kalyan_Resume.pdf">
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+            Resume
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="container narrow">
+        <h2 id="about-title">About</h2>
+        <p>I'm an MS Computer Science student at the University of Southern California, doing deep-learning research at USC's Laboratory of Neuro Imaging (LONI). My research work is on Vision Transformers for 3D brain MRI. My engineering work is on production-style LLM and MLOps systems: FastAPI services, PostgreSQL schemas, Docker deployments, monitoring, and CI.</p>
+        <p>What connects the two is rigor. I'd rather kill a promising result with a controlled ablation than report a gain I can't defend. I bring the same habit to engineering: constraining LLM output to a fixed schema, and load-testing race conditions instead of assuming they're fine.</p>
+
+        <h3 class="subhead">Education</h3>
+        <ul class="education">
+          <li>
+            <div class="edu-main"><strong>M.S. Computer Science</strong>, University of Southern California</div>
+            <div class="edu-meta">Aug 2025 – May 2027 · GPA 3.67/4.00</div>
+          </li>
+          <li>
+            <div class="edu-main"><strong>B.E. Computer Science &amp; Business Systems</strong>, JSS Science and Technology University</div>
+            <div class="edu-meta">Dec 2021 – May 2025 · GPA 3.69/4.00</div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ RESEARCH ============ -->
+    <section id="research" class="section" aria-labelledby="research-title">
+      <div class="container">
+        <h2 id="research-title">Research</h2>
+        <p class="section-intro">Laboratory of Neuro Imaging (LONI), Keck School of Medicine, USC · Apr 2026 – Present</p>
+
+        <article class="research-card featured" aria-labelledby="reorder-title">
+          <p class="badge">Negative result</p>
+          <h3 id="reorder-title">Learned patch ordering (REOrder) for 3D brain MRI: a rigorous negative result</h3>
+          <p class="tldr">I implemented a published RL method for 3D MRI from scratch, tested it across about 40 runs and 3 architectures, and showed that its apparent gain was measurement noise.</p>
+
+          <dl class="research-steps">
+            <div>
+              <dt>Question</dt>
+              <dd>REOrder learns the order in which image patches are fed to a transformer. It was published for 2D images. Does it still help when extended to 3D volumetric MRI for Alzheimer's classification on ADNI?</dd>
+            </div>
+            <div>
+              <dt>What I built</dt>
+              <dd>I implemented REOrder in PyTorch: a Plackett–Luce policy over patch permutations, trained with REINFORCE under an EMA baseline and a Gumbel-temperature curriculum, extended from 2D to 3D volumetric MRI.</dd>
+            </div>
+            <div>
+              <dt>How I tested it</dt>
+              <dd>I benchmarked it against nine fixed orderings across three transformers spanning a 268× capacity range (0.33M–88.4M parameters). That came to ~40 experiments on an 8× V100 HPC cluster, with subject-level splits to prevent leakage.</dd>
+            </div>
+            <div>
+              <dt>Result</dt>
+              <dd>
+                <p>The learned ordering did not beat a well-chosen fixed ordering, and I traced each architecture's null result to a distinct mechanism:</p>
+                <ul>
+                  <li><strong>Full 3D ViT:</strong> it's order-sensitive only through positional embeddings, so it can't benefit from a policy that's resampled every batch.</li>
+                  <li><strong>0.33M model:</strong> undertrained at the available compute budget.</li>
+                  <li><strong>Hierarchical model:</strong> the apparent gain came from block-locality structure, not from any learned permutation.</li>
+                </ul>
+              </dd>
+            </div>
+            <div>
+              <dt>The part I'm proudest of</dt>
+              <dd>One configuration showed an apparent +7.5-point gain. A 2×2 ablation and seed-variance analysis isolated it to measurement noise, not a real improvement.</dd>
+            </div>
+          </dl>
+        </article>
+
+        <article class="research-card" aria-labelledby="rope-title">
+          <h3 id="rope-title">Rotary Position Embeddings in 3D Vision Transformers for Alzheimer's classification</h3>
+          <p>I integrated Rotary Position Embeddings (RoPE) into 3D Vision Transformers for Alzheimer's classification on ADNI T1w MRI. I implemented the MiNiT and NiT variants and benchmarked them against a ViT-B/16 baseline across pretraining regimes on 44K UK Biobank and 100K synthetic LDM volumes, reaching <strong>AUC 0.921 on ADNI</strong>, with <strong>0.887</strong> and <strong>0.813</strong> zero-shot on the independent NIMHANS and OASIS3 cohorts.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <!--
+      HOW TO ADD A SCREENSHOT
+      1. Save the image in assets/screenshots/ (for example multimodal-rag.png).
+      2. In that project's card, replace the whole <div class="shot">...</div> with:
+           <img class="shot-img" src="assets/screenshots/multimodal-rag.png"
+                alt="Describe what the screenshot shows" loading="lazy" width="1280" height="720">
+    -->
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <div class="container">
+        <h2 id="projects-title">Projects</h2>
+
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="shot"><span>Screenshot coming soon</span></div>
+            <div class="project-body">
+              <p class="kind">ML · LLM</p>
+              <h3>Multimodal RAG System</h3>
+              <p>A production-grade retrieval system over PDFs, images (Tesseract OCR), CSVs, and source code, using the Claude API for grounded answers with source citations and confidence scores. Hybrid retrieval combines dense embeddings with BM25 keyword ranking, improving relevance over vector-only search, and an evaluation harness tracks ROUGE and retrieval latency (~100 ms).</p>
+              <ul class="tags" aria-label="Technologies">
+                <li>Python</li><li>FastAPI</li><li>FAISS</li><li>PostgreSQL</li><li>LangChain</li><li>Claude API</li><li>Streamlit</li><li>Docker</li>
+              </ul>
+              <a class="repo-link" href="https://github.com/manaswiiii/multimodal-rag" rel="noopener" target="_blank">View on GitHub<span class="visually-hidden">: Multimodal RAG System</span> →</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="shot"><span>Screenshot coming soon</span></div>
+            <div class="project-body">
+              <p class="kind">ML · LLM evaluation</p>
+              <h3>Chain-of-Thought Faithfulness Analysis</h3>
+              <p>A 4-experiment framework (~15K LLM queries) testing whether chain-of-thought causally drives predictions. CoT improved math reasoning by 44–50 pp, while science MCQ showed 83% early-answer consistency, indicating post-hoc rationalization. It also identified a “Steered-But-Hidden” failure mode, in which models silently follow misleading prompt hints while emitting reasoning that never acknowledges the steer (16% on ARC-Challenge with Qwen 2.5).</p>
+              <ul class="tags" aria-label="Technologies">
+                <li>Python</li><li>Ollama</li><li>Llama 3.2</li><li>Qwen 2.5</li>
+              </ul>
+              <a class="repo-link" href="https://github.com/manaswiiii/cot_faithfulness" rel="noopener" target="_blank">View on GitHub<span class="visually-hidden">: Chain-of-Thought Faithfulness Analysis</span> →</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="shot"><span>Screenshot coming soon</span></div>
+            <div class="project-body">
+              <p class="kind">ML · MLOps</p>
+              <h3>Real-Time ML Serving Pipeline with Monitoring</h3>
+              <p>Online A/B routing between Logistic Regression (81.4%) and fine-tuned DistilBERT (91.3%) behind one FastAPI endpoint at ~10 ms. Prometheus and Grafana track latency, prediction distribution, and confidence, and drift detection triggers retraining automatically.</p>
+              <ul class="tags" aria-label="Technologies">
+                <li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>Prometheus</li><li>Grafana</li><li>Docker</li>
+              </ul>
+              <a class="repo-link" href="https://github.com/manaswiiii/ml-pipeline-monitor" rel="noopener" target="_blank">View on GitHub<span class="visually-hidden">: Real-Time ML Serving Pipeline</span> →</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="shot"><span>Screenshot coming soon</span></div>
+            <div class="project-body">
+              <p class="kind">ML · Medical imaging</p>
+              <h3>Diabetic Retinopathy Grading</h3>
+              <p>ResNet50 on APTOS 2019 (3.6K fundus images, 5 stages) with circular ROI extraction, Gaussian contrast enhancement, and staged transfer learning. Results: <strong>0.90 quadratic weighted kappa</strong>, 81–82% validation accuracy. I evaluated with QWK because staging is ordinal and distant errors cost more.</p>
+              <ul class="tags" aria-label="Technologies">
+                <li>Python</li><li>TensorFlow</li><li>Keras</li><li>OpenCV</li>
+              </ul>
+              <a class="repo-link" href="https://github.com/manaswiiii/diabetic-retinopathy-detection" rel="noopener" target="_blank">View on GitHub<span class="visually-hidden">: Diabetic Retinopathy Grading</span> →</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="shot"><span>Screenshot coming soon</span></div>
+            <div class="project-body">
+              <p class="kind">Systems · LLM</p>
+              <h3>LLM-Powered Code Review Assistant</h3>
+              <p>A provider-agnostic LLM client abstracts Anthropic and OpenAI behind one interface, swappable by environment variable with no code changes, with exponential-backoff retry on rate limits and per-request token and cost accounting. The FastAPI service has 7 REST endpoints over 3 normalized PostgreSQL tables, covering snippet review, before/after diff scoring, and batch GitHub repo review with per-file error isolation. Constrained-JSON prompting returns severity-tagged findings, rendered in a React frontend.</p>
+              <ul class="tags" aria-label="Technologies">
+                <li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>SQLAlchemy</li><li>React</li><li>Claude API</li><li>GPT-4o</li><li>Docker</li>
+              </ul>
+              <a class="repo-link" href="https://github.com/manaswiiii/code-review-assistant" rel="noopener" target="_blank">View on GitHub<span class="visually-hidden">: LLM-Powered Code Review Assistant</span> →</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="shot"><span>Screenshot coming soon</span></div>
+            <div class="project-body">
+              <p class="kind">Systems · Infrastructure</p>
+              <h3>Distributed Rate Limiter &amp; API Gateway</h3>
+              <p>A horizontally-scalable API gateway enforcing token-bucket and sliding-window rate limits over Redis-backed shared state, with limit checks run as atomic Lua scripts to eliminate cross-replica read-modify-write races. <strong>Result:</strong> under k6 load across three replicas behind nginx, in-process limiting over-admitted ~3× the configured rate while the Redis-backed limiter held. Also includes Prometheus and Grafana instrumentation, fail-open/fail-closed behavior on Redis loss, and pytest concurrency tests in CI.</p>
+              <ul class="tags" aria-label="Technologies">
+                <li>Python</li><li>FastAPI</li><li>Redis</li><li>Lua</li><li>nginx</li><li>k6</li><li>Prometheus</li><li>Grafana</li><li>Docker</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section id="experience" class="section" aria-labelledby="experience-title">
+      <div class="container narrow">
+        <h2 id="experience-title">Experience</h2>
+
+        <ol class="timeline">
+          <li>
+            <div class="role-head">
+              <h3>Student Research Worker</h3>
+              <p class="dates">Apr 2026 – Present</p>
+            </div>
+            <p class="org">Laboratory of Neuro Imaging (LONI), Keck School of Medicine, USC · Los Angeles, CA</p>
+            <ul>
+              <li>Implemented REOrder, a Plackett–Luce patch-ordering policy trained with REINFORCE, in PyTorch, extending it from 2D to 3D volumetric MRI and benchmarking it against nine fixed orderings across three transformers (see <a href="#research">Research</a>).</li>
+              <li>Ran ~40 experiments on an 8× V100 HPC cluster with subject-level splits to prevent leakage; isolated an apparent +7.5-pt gain to measurement noise via a 2×2 ablation and seed-variance analysis.</li>
+              <li>Integrated Rotary Position Embeddings into 3D Vision Transformers; implemented the MiNiT and NiT variants and benchmarked them against a ViT-B/16 baseline, reaching AUC 0.921 on ADNI.</li>
+            </ul>
+          </li>
+          <li>
+            <div class="role-head">
+              <h3>Full Stack Web Developer Intern</h3>
+              <p class="dates">Aug 2024 – Oct 2024</p>
+            </div>
+            <p class="org">JupiterKing Technologies · Karnataka, India</p>
+            <ul>
+              <li>Developed a Spring Boot authentication service using parameterized JPA queries, with comparative login endpoints exercising it against OWASP-style injection payloads to validate secure query handling.</li>
+              <li>Integrated an Angular frontend in a layered controller–service–repository architecture.</li>
+            </ul>
+          </li>
+          <li>
+            <div class="role-head">
+              <h3>Freelance Software Developer</h3>
+              <p class="dates">Oct 2023 – Feb 2024</p>
+            </div>
+            <p class="org">Studio Session Manager, Endurance Studios · Karnataka, India</p>
+            <ul>
+              <li>Sole developer of a full-stack session management platform (React, Spring Boot, PostgreSQL) serving 15+ users.</li>
+              <li>Translated stakeholder requirements into booking, file-sharing, and scheduling APIs that cut manual coordination by 30+ min/session, deployed via Docker at 99%+ uptime.</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" class="section" aria-labelledby="skills-title">
+      <div class="container">
+        <h2 id="skills-title">Skills</h2>
+        <dl class="skills">
+          <div>
+            <dt>Languages</dt>
+            <dd><ul class="tags"><li>Python</li><li>Java</li><li>C/C++</li><li>SQL (PostgreSQL)</li><li>JavaScript</li><li>HTML/CSS</li></ul></dd>
+          </div>
+          <div>
+            <dt>ML &amp; NLP</dt>
+            <dd><ul class="tags"><li>PyTorch</li><li>TensorFlow</li><li>Keras</li><li>scikit-learn</li><li>HuggingFace Transformers</li><li>sentence-transformers</li></ul></dd>
+          </div>
+          <div>
+            <dt>ML Methods</dt>
+            <dd><ul class="tags"><li>Vision Transformers</li><li>RoPE</li><li>REINFORCE</li><li>Plackett–Luce policies</li><li>Ablation &amp; seed-variance analysis</li></ul></dd>
+          </div>
+          <div>
+            <dt>Retrieval &amp; LLM</dt>
+            <dd><ul class="tags"><li>FAISS</li><li>BM25</li><li>LangChain</li><li>Hybrid search</li><li>Tesseract OCR</li><li>Claude API</li><li>GPT-4o</li><li>Ollama</li></ul></dd>
+          </div>
+          <div>
+            <dt>MLOps</dt>
+            <dd><ul class="tags"><li>A/B testing</li><li>Drift detection</li><li>Automated retraining</li><li>Model serving</li><li>Prometheus</li><li>Grafana</li></ul></dd>
+          </div>
+          <div>
+            <dt>Backend &amp; Infra</dt>
+            <dd><ul class="tags"><li>FastAPI</li><li>Spring Boot</li><li>Flask</li><li>REST APIs</li><li>React</li><li>PostgreSQL</li><li>Redis</li><li>Docker</li><li>nginx</li><li>Git</li><li>GitHub Actions CI</li><li>pytest</li><li>Linux</li></ul></dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section contact" aria-labelledby="contact-title">
+      <div class="container narrow">
+        <h2 id="contact-title">Contact</h2>
+        <p>I'm looking for ML engineering and software engineering roles. The best way to reach me is email.</p>
+        <p class="contact-email"><a href="mailto:mkalyan@usc.edu">mkalyan@usc.edu</a></p>
+        <ul class="social" aria-label="Profiles">
+          <li><a href="https://github.com/manaswiiii" rel="noopener" target="_blank">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/manaswi-kalyan-5a318822a" rel="noopener" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year">2026</span> Manaswi Kalyan</p>
+    </div>
+  </footer>
+</body>
+</html>
