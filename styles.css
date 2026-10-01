@@ -250,6 +250,7 @@ img { max-width: 100%; height: auto; display: block; }
   padding: 4px 10px; border-radius: 6px;
 }
 .shot-img { border-bottom: 1px solid var(--border); }
+.hide-placeholders .shot { display: none; }
 .project-body { padding: 22px; display: flex; flex-direction: column; flex: 1; }
 .kind {
   color: var(--accent); font-size: 0.8rem; font-weight: 700;

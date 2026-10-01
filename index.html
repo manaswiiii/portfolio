@@ -161,6 +161,10 @@
 
     <!-- ============ PROJECTS ============ -->
     <!--
+      SCREENSHOT PLACEHOLDERS ARE HIDDEN FOR NOW
+      The "hide-placeholders" class on the project grid below hides every
+      "Screenshot coming soon" box. Delete that class to show them again.
+
       HOW TO ADD A SCREENSHOT
       1. Save the image in assets/screenshots/ (for example multimodal-rag.png).
       2. In that project's card, replace the whole <div class="shot">...</div> with:
@@ -171,7 +175,7 @@
       <div class="container">
         <h2 id="projects-title">Projects</h2>
 
-        <div class="project-grid">
+        <div class="project-grid hide-placeholders">
           <article class="project-card">
             <div class="shot"><span>Screenshot coming soon</span></div>
             <div class="project-body">
@@ -246,6 +250,8 @@
               <ul class="tags" aria-label="Technologies">
                 <li>Python</li><li>FastAPI</li><li>Redis</li><li>Lua</li><li>nginx</li><li>k6</li><li>Prometheus</li><li>Grafana</li><li>Docker</li>
               </ul>
+              <!-- TO DO: replace REPO-NAME with the real repo name, then delete the word "hidden" to show this link. -->
+              <a class="repo-link" href="https://github.com/manaswiiii/REPO-NAME" rel="noopener" target="_blank" hidden>View on GitHub<span class="visually-hidden">: Distributed Rate Limiter &amp; API Gateway</span> →</a>
             </div>
           </article>
 
