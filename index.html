@@ -12,13 +12,18 @@
   <link rel="icon" href="favicon.ico" sizes="48x48">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caveat:wght@500;700&family=Space+Mono:wght@400;700&display=swap">
   <link rel="stylesheet" href="styles.css">
-  <!-- Apply a saved theme before the page paints, so there's no light/dark flash. -->
+  <!-- Apply a saved theme before the page paints, and flag that JS is on (for animations). -->
   <script>
     (function () {
+      var root = document.documentElement;
+      root.classList.add('js');
       try {
         var t = localStorage.getItem('theme');
-        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+        if (t === 'light' || t === 'dark') root.setAttribute('data-theme', t);
       } catch (e) {}
     })();
   </script>
@@ -31,9 +36,9 @@
     <div class="container header-inner">
       <a class="brand" href="#top" aria-label="Manaswi Kalyan, back to top">MK</a>
       <nav aria-label="Primary">
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+        <button class="menu-toggle icon-btn" type="button" aria-expanded="false" aria-controls="nav-links">
           <span class="visually-hidden">Menu</span>
-          <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
         <ul id="nav-links" class="nav-links">
           <li><a href="#about">About</a></li>
@@ -44,9 +49,9 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <button class="theme-toggle" type="button" aria-label="Switch color theme">
-        <svg class="icon-moon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-        <svg class="icon-sun" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <button class="theme-toggle icon-btn" type="button" aria-label="Switch color theme">
+        <svg class="icon-moon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="icon-sun" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
       </button>
     </div>
   </header>
@@ -54,74 +59,116 @@
   <main id="main">
     <!-- ============ HERO ============ -->
     <section id="top" class="hero">
-      <div class="container">
-        <p class="eyebrow">MS CS @ USC · graduating May 2027</p>
-        <h1>Manaswi Kalyan</h1>
-        <p class="tagline">ML engineer and researcher building rigorous ML systems. I implement methods from papers, run them at scale, and stay skeptical of the results.</p>
+      <div class="container hero-inner">
+        <p class="hand hi" aria-hidden="true">hi, my name is</p>
+
+        <div class="name-wrap">
+          <span class="note-chip chip-left" aria-hidden="true">MS CS @ USC</span>
+          <span class="note-chip chip-right" aria-hidden="true">Los Angeles, CA</span>
+          <h1 class="name"><span>Manaswi</span> <span>Kalyan</span></h1>
+          <svg class="name-arrow" aria-hidden="true" viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M110 50 C 80 55, 40 45, 18 14"/><path d="M14 30 L 17 12 L 33 19"/></svg>
+          <p class="hand name-note" aria-hidden="true">graduating May 2027!</p>
+        </div>
+
+        <p class="status"><span class="dot" aria-hidden="true"></span> Open to ML engineering &amp; software engineering roles</p>
+
+        <p class="tagline">ML engineer and researcher building <mark class="hl">rigorous ML systems</mark>. I implement methods from papers, run them at scale, and stay skeptical of the results.</p>
+
+        <div class="cta">
+          <a class="btn btn-yellow" href="resume.pdf" download="Manaswi_Kalyan_Resume.pdf">
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+            Resume
+          </a>
+          <a class="btn btn-ink" href="#contact">Contact me →</a>
+        </div>
 
         <ul class="social" aria-label="Profiles">
           <li>
-            <a href="https://github.com/manaswiiii" rel="noopener" target="_blank">
+            <a class="icon-btn" href="https://github.com/manaswiiii" rel="noopener" target="_blank" aria-label="GitHub">
               <svg aria-hidden="true" width="18" height="18" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-              GitHub
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/manaswi-kalyan-5a318822a" rel="noopener" target="_blank">
+            <a class="icon-btn" href="https://www.linkedin.com/in/manaswi-kalyan-5a318822a" rel="noopener" target="_blank" aria-label="LinkedIn">
               <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-              LinkedIn
             </a>
           </li>
           <li>
-            <a href="mailto:mkalyan@usc.edu">
-              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-              Email
+            <a class="icon-btn" href="mailto:mkalyan@usc.edu" aria-label="Email">
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
             </a>
           </li>
         </ul>
 
-        <div class="cta">
-          <a class="btn btn-primary" href="resume.pdf" download="Manaswi_Kalyan_Resume.pdf">
-            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
-            Resume
-          </a>
+        <!-- Decorative stickers: drag them around. -->
+        <div class="hero-stickers" aria-hidden="true">
+          <span class="sticker s-yellow" data-drag style="--r:-6deg">deep learning research</span>
+          <span class="sticker s-lime" data-drag style="--r:5deg">ML systems</span>
+          <span class="sticker s-pink" data-drag style="--r:-3deg">LLMs</span>
+          <span class="sticker s-purple" data-drag style="--r:7deg">MLOps</span>
+          <span class="sticker s-blue" data-drag style="--r:-8deg">3D brain MRI</span>
+          <span class="sticker s-white" data-drag style="--r:4deg">✦ stay skeptical ✦</span>
         </div>
+        <p class="hand drag-hint" aria-hidden="true">psst… the stickers are draggable ↗</p>
       </div>
     </section>
 
     <!-- ============ ABOUT ============ -->
     <section id="about" class="section" aria-labelledby="about-title">
-      <div class="container narrow">
-        <h2 id="about-title">About</h2>
-        <p>I'm an MS Computer Science student at the University of Southern California, doing deep-learning research at USC's Laboratory of Neuro Imaging (LONI). My research work is on Vision Transformers for 3D brain MRI. My engineering work is on production-style LLM and MLOps systems: FastAPI services, PostgreSQL schemas, Docker deployments, monitoring, and CI.</p>
-        <p>What connects the two is rigor. I'd rather kill a promising result with a controlled ablation than report a gain I can't defend. I bring the same habit to engineering: constraining LLM output to a fixed schema, and load-testing race conditions instead of assuming they're fine.</p>
+      <div class="container">
+        <h2 id="about-title" class="label-heading"><span>about me</span></h2>
 
-        <h3 class="subhead">Education</h3>
-        <ul class="education">
-          <li>
-            <div class="edu-main"><strong>M.S. Computer Science</strong>, University of Southern California</div>
-            <div class="edu-meta">Aug 2025 – May 2027 · GPA 3.67/4.00</div>
-          </li>
-          <li>
-            <div class="edu-main"><strong>B.E. Computer Science &amp; Business Systems</strong>, JSS Science and Technology University</div>
-            <div class="edu-meta">Dec 2021 – May 2025 · GPA 3.69/4.00</div>
-          </li>
-        </ul>
+        <div class="about-grid">
+          <!--
+            PHOTO SLOT: when your photo is in assets/photos/, replace the
+            <div class="photo-placeholder">...</div> below with:
+              <img src="assets/photos/me.jpg" alt="Manaswi Kalyan" width="600" height="750" loading="lazy">
+          -->
+          <figure class="polaroid tape" style="--r:-4deg">
+            <div class="photo-placeholder" aria-hidden="true">
+              <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="42" r="18"/><path d="M24 88c4-16 14-24 26-24s22 8 26 24"/><path d="M33 34c6-10 26-12 34 0"/><circle cx="43" cy="44" r="4"/><circle cx="57" cy="44" r="4"/><path d="M47 44h6"/></svg>
+            </div>
+            <figcaption class="hand">photo coming soon!</figcaption>
+          </figure>
+
+          <div class="about-text">
+            <p>I'm an MS Computer Science student at the University of Southern California, doing deep-learning research at USC's Laboratory of Neuro Imaging (LONI). My research work is on Vision Transformers for 3D brain MRI. My engineering work is on production-style LLM and MLOps systems: FastAPI services, PostgreSQL schemas, Docker deployments, monitoring, and CI.</p>
+            <p>What connects the two is rigor. <mark class="hl">I'd rather kill a promising result with a controlled ablation than report a gain I can't defend.</mark> I bring the same habit to engineering: constraining LLM output to a fixed schema, and load-testing race conditions instead of assuming they're fine.</p>
+
+            <div class="index-card tape tape-blue" style="--r:1deg">
+              <h3 class="mono-label">Education</h3>
+              <ul class="education">
+                <li>
+                  <div><strong>M.S. Computer Science</strong>, University of Southern California</div>
+                  <div class="meta">Aug 2025 – May 2027 · GPA <mark class="hl">3.67/4.00</mark></div>
+                </li>
+                <li>
+                  <div><strong>B.E. Computer Science &amp; Business Systems</strong>, JSS Science and Technology University</div>
+                  <div class="meta">Dec 2021 – May 2025 · GPA <mark class="hl">3.69/4.00</mark></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- ============ RESEARCH ============ -->
     <section id="research" class="section" aria-labelledby="research-title">
       <div class="container">
-        <h2 id="research-title">Research</h2>
+        <h2 id="research-title" class="label-heading"><span>research notebook</span></h2>
         <p class="section-intro">Laboratory of Neuro Imaging (LONI), Keck School of Medicine, USC · Apr 2026 – Present</p>
 
-        <article class="research-card featured" aria-labelledby="reorder-title">
-          <p class="badge">Negative result</p>
+        <article class="notebook" aria-labelledby="reorder-title">
+          <div class="nb-head">
+            <span class="mono-label">Entry 01</span>
+            <span class="badge">Negative result</span>
+          </div>
+          <p class="stamp" aria-hidden="true">Null result<br><small>✓ verified</small></p>
           <h3 id="reorder-title">Learned patch ordering (REOrder) for 3D brain MRI: a rigorous negative result</h3>
-          <p class="tldr">I implemented a published RL method for 3D MRI from scratch, tested it across about 40 runs and 3 architectures, and showed that its apparent gain was measurement noise.</p>
+          <p class="tldr"><mark class="hl">I implemented a published RL method for 3D MRI from scratch, tested it across about 40 runs and 3 architectures, and showed that its apparent gain was measurement noise.</mark></p>
 
-          <dl class="research-steps">
+          <dl class="nb-steps">
             <div>
               <dt>Question</dt>
               <dd>REOrder learns the order in which image patches are fed to a transformer. It was published for 2D images. Does it still help when extended to 3D volumetric MRI for Alzheimer's classification on ADNI?</dd>
@@ -147,37 +194,49 @@
             </div>
             <div>
               <dt>The part I'm proudest of</dt>
-              <dd>One configuration showed an apparent +7.5-point gain. A 2×2 ablation and seed-variance analysis isolated it to measurement noise, not a real improvement.</dd>
+              <dd>One configuration showed an apparent <s>+7.5-point gain</s>. A 2×2 ablation and seed-variance analysis isolated it to measurement noise, not a real improvement.
+                <span class="hand margin-note" aria-hidden="true">← looked great. wasn't real.</span>
+              </dd>
             </div>
           </dl>
         </article>
 
-        <article class="research-card" aria-labelledby="rope-title">
+        <article class="notebook nb-short" aria-labelledby="rope-title">
+          <div class="nb-head">
+            <span class="mono-label">Entry 02</span>
+          </div>
           <h3 id="rope-title">Rotary Position Embeddings in 3D Vision Transformers for Alzheimer's classification</h3>
-          <p>I integrated Rotary Position Embeddings (RoPE) into 3D Vision Transformers for Alzheimer's classification on ADNI T1w MRI. I implemented the MiNiT and NiT variants and benchmarked them against a ViT-B/16 baseline across pretraining regimes on 44K UK Biobank and 100K synthetic LDM volumes, reaching <strong>AUC 0.921 on ADNI</strong>, with <strong>0.887</strong> and <strong>0.813</strong> zero-shot on the independent NIMHANS and OASIS3 cohorts.</p>
+          <p>I integrated Rotary Position Embeddings (RoPE) into 3D Vision Transformers for Alzheimer's classification on ADNI T1w MRI. I implemented the MiNiT and NiT variants and benchmarked them against a ViT-B/16 baseline across pretraining regimes on 44K UK Biobank and 100K synthetic LDM volumes, reaching <mark class="hl"><strong>AUC 0.921 on ADNI</strong></mark>, with <strong>0.887</strong> and <strong>0.813</strong> zero-shot on the independent NIMHANS and OASIS3 cohorts.</p>
+          <ul class="score-strip" aria-label="AUC by cohort">
+            <li class="sticker s-lime" style="--r:-3deg"><span>ADNI</span> 0.921</li>
+            <li class="sticker s-blue" style="--r:2deg"><span>NIMHANS · zero-shot</span> 0.887</li>
+            <li class="sticker s-pink" style="--r:-2deg"><span>OASIS3 · zero-shot</span> 0.813</li>
+          </ul>
         </article>
       </div>
     </section>
 
     <!-- ============ PROJECTS ============ -->
     <!--
-      SCREENSHOT PLACEHOLDERS ARE HIDDEN FOR NOW
-      The "hide-placeholders" class on the project grid below hides every
-      "Screenshot coming soon" box. Delete that class to show them again.
-
-      HOW TO ADD A SCREENSHOT
+      Each card starts with a hand-drawn style "sketch" of how the system works.
+      HOW TO ADD A SCREENSHOT INSTEAD
       1. Save the image in assets/screenshots/ (for example multimodal-rag.png).
-      2. In that project's card, replace the whole <div class="shot">...</div> with:
+      2. In that project's card, replace the whole <div class="sketch" ...>...</div> with:
            <img class="shot-img" src="assets/screenshots/multimodal-rag.png"
                 alt="Describe what the screenshot shows" loading="lazy" width="1280" height="720">
     -->
     <section id="projects" class="section" aria-labelledby="projects-title">
       <div class="container">
-        <h2 id="projects-title">Projects</h2>
+        <h2 id="projects-title" class="label-heading"><span>things I built</span></h2>
 
-        <div class="project-grid hide-placeholders">
-          <article class="project-card">
-            <div class="shot"><span>Screenshot coming soon</span></div>
+        <div class="project-grid">
+          <article class="project-card tape" style="--r:-1.2deg">
+            <div class="sketch" role="img" aria-label="Diagram: PDFs, images, CSVs and code go into hybrid retrieval (dense plus BM25 over FAISS), then the Claude API, producing an answer with citations.">
+              <span class="node n-yellow">PDFs · images · CSVs · code</span><span class="arr">→</span>
+              <span class="node n-blue">dense + BM25 · FAISS</span><span class="arr">→</span>
+              <span class="node n-pink">Claude API</span><span class="arr">→</span>
+              <span class="node n-lime">answer + citations</span>
+            </div>
             <div class="project-body">
               <p class="kind">ML · LLM</p>
               <h3>Multimodal RAG System</h3>
@@ -189,8 +248,13 @@
             </div>
           </article>
 
-          <article class="project-card">
-            <div class="shot"><span>Screenshot coming soon</span></div>
+          <article class="project-card tape tape-blue" style="--r:1deg">
+            <div class="sketch" role="img" aria-label="Diagram: a question with a planted misleading hint goes through chain-of-thought to an answer; the check is whether the reasoning admits the hint.">
+              <span class="node n-yellow">question + planted hint</span><span class="arr">→</span>
+              <span class="node n-purple">chain-of-thought</span><span class="arr">→</span>
+              <span class="node n-pink">answer</span>
+              <span class="hand sketch-note">does the reasoning admit the hint?</span>
+            </div>
             <div class="project-body">
               <p class="kind">ML · LLM evaluation</p>
               <h3>Chain-of-Thought Faithfulness Analysis</h3>
@@ -202,8 +266,14 @@
             </div>
           </article>
 
-          <article class="project-card">
-            <div class="shot"><span>Screenshot coming soon</span></div>
+          <article class="project-card tape" style="--r:0.8deg">
+            <div class="sketch" role="img" aria-label="Diagram: requests hit a FastAPI endpoint that A/B routes between Logistic Regression and DistilBERT, monitored by Prometheus and Grafana, with drift triggering retraining.">
+              <span class="node n-yellow">request</span><span class="arr">→</span>
+              <span class="node n-blue">FastAPI · A/B</span><span class="arr">→</span>
+              <span class="stack"><span class="node n-pink">LogReg 81.4%</span><span class="node n-lime">DistilBERT 91.3%</span></span><span class="arr">→</span>
+              <span class="node n-purple">Prometheus + Grafana</span>
+              <span class="hand sketch-note">drift? → retrain ↺</span>
+            </div>
             <div class="project-body">
               <p class="kind">ML · MLOps</p>
               <h3>Real-Time ML Serving Pipeline with Monitoring</h3>
@@ -215,8 +285,14 @@
             </div>
           </article>
 
-          <article class="project-card">
-            <div class="shot"><span>Screenshot coming soon</span></div>
+          <article class="project-card tape tape-blue" style="--r:-0.9deg">
+            <div class="sketch" role="img" aria-label="Diagram: a fundus image goes through ROI crop and contrast enhancement, then ResNet50, producing a 5-stage grade.">
+              <span class="node n-yellow">fundus image</span><span class="arr">→</span>
+              <span class="node n-blue">ROI crop + contrast</span><span class="arr">→</span>
+              <span class="node n-pink">ResNet50</span><span class="arr">→</span>
+              <span class="node n-lime">5-stage grade</span>
+              <span class="hand sketch-note">QWK, because stages are ordinal</span>
+            </div>
             <div class="project-body">
               <p class="kind">ML · Medical imaging</p>
               <h3>Diabetic Retinopathy Grading</h3>
@@ -228,8 +304,13 @@
             </div>
           </article>
 
-          <article class="project-card">
-            <div class="shot"><span>Screenshot coming soon</span></div>
+          <article class="project-card tape" style="--r:1.1deg">
+            <div class="sketch" role="img" aria-label="Diagram: a code snippet or GitHub repo goes to an LLM client that can use Anthropic or OpenAI, which returns JSON findings stored in PostgreSQL and shown in React.">
+              <span class="node n-yellow">snippet / GitHub repo</span><span class="arr">→</span>
+              <span class="node n-purple">LLM client: Anthropic | OpenAI</span><span class="arr">→</span>
+              <span class="node n-pink">JSON findings</span><span class="arr">→</span>
+              <span class="node n-lime">PostgreSQL · React</span>
+            </div>
             <div class="project-body">
               <p class="kind">Systems · LLM</p>
               <h3>LLM-Powered Code Review Assistant</h3>
@@ -241,8 +322,14 @@
             </div>
           </article>
 
-          <article class="project-card">
-            <div class="shot"><span>Screenshot coming soon</span></div>
+          <article class="project-card tape tape-blue" style="--r:-1deg">
+            <div class="sketch" role="img" aria-label="Diagram: k6 load goes through nginx to three gateway replicas that share limits in Redis via atomic Lua scripts.">
+              <span class="node n-yellow">k6 load</span><span class="arr">→</span>
+              <span class="node n-blue">nginx</span><span class="arr">→</span>
+              <span class="stack"><span class="node n-pink">gateway 1</span><span class="node n-pink">gateway 2</span><span class="node n-pink">gateway 3</span></span><span class="arr">→</span>
+              <span class="node n-lime">Redis + Lua</span>
+              <span class="hand sketch-note">in-process limits: ~3× over-admit</span>
+            </div>
             <div class="project-body">
               <p class="kind">Systems · Infrastructure</p>
               <h3>Distributed Rate Limiter &amp; API Gateway</h3>
@@ -254,7 +341,6 @@
               <a class="repo-link" href="https://github.com/manaswiiii/REPO-NAME" rel="noopener" target="_blank" hidden>View on GitHub<span class="visually-hidden">: Distributed Rate Limiter &amp; API Gateway</span> →</a>
             </div>
           </article>
-
         </div>
       </div>
     </section>
@@ -262,13 +348,13 @@
     <!-- ============ EXPERIENCE ============ -->
     <section id="experience" class="section" aria-labelledby="experience-title">
       <div class="container narrow">
-        <h2 id="experience-title">Experience</h2>
+        <h2 id="experience-title" class="label-heading"><span>experience</span></h2>
 
-        <ol class="timeline">
+        <ol class="timeline ruled">
           <li>
             <div class="role-head">
               <h3>Student Research Worker</h3>
-              <p class="dates">Apr 2026 – Present</p>
+              <p class="dates"><mark class="hl">Apr 2026 – Present</mark></p>
             </div>
             <p class="org">Laboratory of Neuro Imaging (LONI), Keck School of Medicine, USC · Los Angeles, CA</p>
             <ul>
@@ -280,7 +366,7 @@
           <li>
             <div class="role-head">
               <h3>Full Stack Web Developer Intern</h3>
-              <p class="dates">Aug 2024 – Oct 2024</p>
+              <p class="dates"><mark class="hl">Aug 2024 – Oct 2024</mark></p>
             </div>
             <p class="org">JupiterKing Technologies · Karnataka, India</p>
             <ul>
@@ -291,7 +377,7 @@
           <li>
             <div class="role-head">
               <h3>Freelance Software Developer</h3>
-              <p class="dates">Oct 2023 – Feb 2024</p>
+              <p class="dates"><mark class="hl">Oct 2023 – Feb 2024</mark></p>
             </div>
             <p class="org">Studio Session Manager, Endurance Studios · Karnataka, India</p>
             <ul>
@@ -306,53 +392,64 @@
     <!-- ============ SKILLS ============ -->
     <section id="skills" class="section" aria-labelledby="skills-title">
       <div class="container">
-        <h2 id="skills-title">Skills</h2>
-        <dl class="skills">
-          <div>
-            <dt>Languages</dt>
-            <dd><ul class="tags"><li>Python</li><li>Java</li><li>C/C++</li><li>SQL (PostgreSQL)</li><li>JavaScript</li><li>HTML/CSS</li></ul></dd>
+        <h2 id="skills-title" class="label-heading"><span>sticker sheet</span></h2>
+        <div class="sticker-sheet">
+          <div class="sheet-bar">
+            <p class="hand">peel one off and drag it around ✿</p>
+            <button class="tidy-btn" type="button">tidy up</button>
           </div>
-          <div>
-            <dt>ML &amp; NLP</dt>
-            <dd><ul class="tags"><li>PyTorch</li><li>TensorFlow</li><li>Keras</li><li>scikit-learn</li><li>HuggingFace Transformers</li><li>sentence-transformers</li></ul></dd>
-          </div>
-          <div>
-            <dt>ML Methods</dt>
-            <dd><ul class="tags"><li>Vision Transformers</li><li>RoPE</li><li>REINFORCE</li><li>Plackett–Luce policies</li><li>Ablation &amp; seed-variance analysis</li></ul></dd>
-          </div>
-          <div>
-            <dt>Retrieval &amp; LLM</dt>
-            <dd><ul class="tags"><li>FAISS</li><li>BM25</li><li>LangChain</li><li>Hybrid search</li><li>Tesseract OCR</li><li>Claude API</li><li>GPT-4o</li><li>Ollama</li></ul></dd>
-          </div>
-          <div>
-            <dt>MLOps</dt>
-            <dd><ul class="tags"><li>A/B testing</li><li>Drift detection</li><li>Automated retraining</li><li>Model serving</li><li>Prometheus</li><li>Grafana</li></ul></dd>
-          </div>
-          <div>
-            <dt>Backend &amp; Infra</dt>
-            <dd><ul class="tags"><li>FastAPI</li><li>Spring Boot</li><li>Flask</li><li>REST APIs</li><li>React</li><li>PostgreSQL</li><li>Redis</li><li>Docker</li><li>nginx</li><li>Git</li><li>GitHub Actions CI</li><li>pytest</li><li>Linux</li></ul></dd>
-          </div>
-        </dl>
+          <dl class="skills">
+            <div>
+              <dt>Languages</dt>
+              <dd><ul class="stickers"><li>Python</li><li>Java</li><li>C/C++</li><li>SQL (PostgreSQL)</li><li>JavaScript</li><li>HTML/CSS</li></ul></dd>
+            </div>
+            <div>
+              <dt>ML &amp; NLP</dt>
+              <dd><ul class="stickers"><li>PyTorch</li><li>TensorFlow</li><li>Keras</li><li>scikit-learn</li><li>HuggingFace Transformers</li><li>sentence-transformers</li></ul></dd>
+            </div>
+            <div>
+              <dt>ML Methods</dt>
+              <dd><ul class="stickers"><li>Vision Transformers</li><li>RoPE</li><li>REINFORCE</li><li>Plackett–Luce policies</li><li>Ablation &amp; seed-variance analysis</li></ul></dd>
+            </div>
+            <div>
+              <dt>Retrieval &amp; LLM</dt>
+              <dd><ul class="stickers"><li>FAISS</li><li>BM25</li><li>LangChain</li><li>Hybrid search</li><li>Tesseract OCR</li><li>Claude API</li><li>GPT-4o</li><li>Ollama</li></ul></dd>
+            </div>
+            <div>
+              <dt>MLOps</dt>
+              <dd><ul class="stickers"><li>A/B testing</li><li>Drift detection</li><li>Automated retraining</li><li>Model serving</li><li>Prometheus</li><li>Grafana</li></ul></dd>
+            </div>
+            <div>
+              <dt>Backend &amp; Infra</dt>
+              <dd><ul class="stickers"><li>FastAPI</li><li>Spring Boot</li><li>Flask</li><li>REST APIs</li><li>React</li><li>PostgreSQL</li><li>Redis</li><li>Docker</li><li>nginx</li><li>Git</li><li>GitHub Actions CI</li><li>pytest</li><li>Linux</li></ul></dd>
+            </div>
+          </dl>
+        </div>
       </div>
     </section>
 
     <!-- ============ CONTACT ============ -->
-    <section id="contact" class="section contact" aria-labelledby="contact-title">
+    <section id="contact" class="section" aria-labelledby="contact-title">
       <div class="container narrow">
-        <h2 id="contact-title">Contact</h2>
-        <p>I'm looking for ML engineering and software engineering roles. The best way to reach me is email.</p>
-        <p class="contact-email"><a href="mailto:mkalyan@usc.edu">mkalyan@usc.edu</a></p>
-        <ul class="social" aria-label="Profiles">
-          <li><a href="https://github.com/manaswiiii" rel="noopener" target="_blank">GitHub</a></li>
-          <li><a href="https://www.linkedin.com/in/manaswi-kalyan-5a318822a" rel="noopener" target="_blank">LinkedIn</a></li>
-        </ul>
+        <div class="postcard">
+          <p class="postage" aria-hidden="true">LA<br><small>CA · USA</small></p>
+          <h2 id="contact-title" class="postcard-title">let's talk!</h2>
+          <p>I'm looking for ML engineering and software engineering roles. The best way to reach me is email.</p>
+          <p class="contact-email"><a href="mailto:mkalyan@usc.edu">mkalyan@usc.edu</a></p>
+          <ul class="contact-links" aria-label="Profiles">
+            <li><a class="btn btn-small" href="https://github.com/manaswiiii" rel="noopener" target="_blank">GitHub ↗</a></li>
+            <li><a class="btn btn-small" href="https://www.linkedin.com/in/manaswi-kalyan-5a318822a" rel="noopener" target="_blank">LinkedIn ↗</a></li>
+            <li><a class="btn btn-small btn-yellow" href="resume.pdf" download="Manaswi_Kalyan_Resume.pdf">Resume ↓</a></li>
+          </ul>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
+    <div class="container footer-inner">
       <p>© <span id="year">2026</span> Manaswi Kalyan</p>
+      <p class="hand">made with plain HTML, CSS &amp; JS ✎</p>
     </div>
   </footer>
 </body>
