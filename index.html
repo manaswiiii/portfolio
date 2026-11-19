@@ -9,6 +9,16 @@
   <meta property="og:title" content="Manaswi Kalyan · ML Engineer &amp; Researcher">
   <meta property="og:description" content="Rigorous ML systems: I implement methods from papers, run them at scale, and stay skeptical of the results.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.manaswikalyan.com/">
+  <meta property="og:image" content="https://www.manaswikalyan.com/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Manaswi Kalyan, ML engineer and researcher. Notebook-style card with name in a hand-drawn red box.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Manaswi Kalyan · ML Engineer &amp; Researcher">
+  <meta name="twitter:description" content="Rigorous ML systems: I implement methods from papers, run them at scale, and stay skeptical of the results.">
+  <meta name="twitter:image" content="https://www.manaswikalyan.com/assets/og-image.png">
+  <link rel="canonical" href="https://www.manaswikalyan.com/">
   <link rel="icon" href="favicon.ico" sizes="48x48">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -65,7 +75,10 @@
         <div class="name-wrap">
           <span class="note-chip chip-left" aria-hidden="true">MS CS @ USC</span>
           <span class="note-chip chip-right" aria-hidden="true">Los Angeles, CA</span>
+          <div class="name-frame">
           <h1 class="name"><span>Manaswi</span> <span>Kalyan</span></h1>
+          <svg class="name-box" aria-hidden="true" viewBox="0 0 100 100" preserveAspectRatio="none" fill="none"><path pathLength="1" d="M4 7 C 30 2, 68 3, 97 5 C 99 34, 98 68, 96 95 C 66 98, 34 97, 3 94 C 1 64, 2 34, 6 3 L 14 2"/></svg>
+          </div>
           <svg class="name-arrow" aria-hidden="true" viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M110 50 C 80 55, 40 45, 18 14"/><path d="M14 30 L 17 12 L 33 19"/></svg>
           <p class="hand name-note" aria-hidden="true">graduating May 2027!</p>
         </div>
@@ -229,8 +242,15 @@
       <div class="container">
         <h2 id="projects-title" class="label-heading"><span>things I built</span></h2>
 
+        <div class="filter-bar" role="group" aria-label="Filter projects">
+          <button type="button" class="filter-btn s-yellow" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="filter-btn s-pink" data-filter="ml" aria-pressed="false">ML</button>
+          <button type="button" class="filter-btn s-blue" data-filter="systems" aria-pressed="false">Systems</button>
+        </div>
+        <p class="visually-hidden" id="filter-status" aria-live="polite"></p>
+
         <div class="project-grid">
-          <article class="project-card tape" style="--r:-1.2deg">
+          <article data-kind="ml" class="project-card tape" style="--r:-1.2deg">
             <div class="sketch" role="img" aria-label="Diagram: PDFs, images, CSVs and code go into hybrid retrieval (dense plus BM25 over FAISS), then the Claude API, producing an answer with citations.">
               <span class="node n-yellow">PDFs · images · CSVs · code</span><span class="arr">→</span>
               <span class="node n-blue">dense + BM25 · FAISS</span><span class="arr">→</span>
@@ -248,7 +268,7 @@
             </div>
           </article>
 
-          <article class="project-card tape tape-blue" style="--r:1deg">
+          <article data-kind="ml" class="project-card tape tape-blue" style="--r:1deg">
             <div class="sketch" role="img" aria-label="Diagram: a question with a planted misleading hint goes through chain-of-thought to an answer; the check is whether the reasoning admits the hint.">
               <span class="node n-yellow">question + planted hint</span><span class="arr">→</span>
               <span class="node n-purple">chain-of-thought</span><span class="arr">→</span>
@@ -266,7 +286,7 @@
             </div>
           </article>
 
-          <article class="project-card tape" style="--r:0.8deg">
+          <article data-kind="ml" class="project-card tape" style="--r:0.8deg">
             <div class="sketch" role="img" aria-label="Diagram: requests hit a FastAPI endpoint that A/B routes between Logistic Regression and DistilBERT, monitored by Prometheus and Grafana, with drift triggering retraining.">
               <span class="node n-yellow">request</span><span class="arr">→</span>
               <span class="node n-blue">FastAPI · A/B</span><span class="arr">→</span>
@@ -285,7 +305,7 @@
             </div>
           </article>
 
-          <article class="project-card tape tape-blue" style="--r:-0.9deg">
+          <article data-kind="ml" class="project-card tape tape-blue" style="--r:-0.9deg">
             <div class="sketch" role="img" aria-label="Diagram: a fundus image goes through ROI crop and contrast enhancement, then ResNet50, producing a 5-stage grade.">
               <span class="node n-yellow">fundus image</span><span class="arr">→</span>
               <span class="node n-blue">ROI crop + contrast</span><span class="arr">→</span>
@@ -304,7 +324,7 @@
             </div>
           </article>
 
-          <article class="project-card tape" style="--r:1.1deg">
+          <article data-kind="systems" class="project-card tape" style="--r:1.1deg">
             <div class="sketch" role="img" aria-label="Diagram: a code snippet or GitHub repo goes to an LLM client that can use Anthropic or OpenAI, which returns JSON findings stored in PostgreSQL and shown in React.">
               <span class="node n-yellow">snippet / GitHub repo</span><span class="arr">→</span>
               <span class="node n-purple">LLM client: Anthropic | OpenAI</span><span class="arr">→</span>
@@ -322,7 +342,7 @@
             </div>
           </article>
 
-          <article class="project-card tape tape-blue" style="--r:-1deg">
+          <article data-kind="systems" class="project-card tape tape-blue" style="--r:-1deg">
             <div class="sketch" role="img" aria-label="Diagram: k6 load goes through nginx to three gateway replicas that share limits in Redis via atomic Lua scripts.">
               <span class="node n-yellow">k6 load</span><span class="arr">→</span>
               <span class="node n-blue">nginx</span><span class="arr">→</span>

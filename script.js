@@ -126,5 +126,27 @@
   document.querySelectorAll('mark.hl, .stamp').forEach(function (el) { io.observe(el); });
 })();
 
+// Project filter: All / ML / Systems.
+(function () {
+  var buttons = document.querySelectorAll('.filter-btn');
+  var cards = document.querySelectorAll('.project-card[data-kind]');
+  var status = document.getElementById('filter-status');
+  var names = { all: '', ml: 'ML ', systems: 'systems ' };
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var f = btn.getAttribute('data-filter');
+      var shown = 0;
+      buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
+      cards.forEach(function (card) {
+        var match = f === 'all' || card.getAttribute('data-kind') === f;
+        card.hidden = !match;
+        if (match) shown++;
+      });
+      status.textContent = 'Showing ' + shown + ' ' + names[f] + 'projects';
+    });
+  });
+})();
+
 // Keep the footer year current.
 document.getElementById('year').textContent = new Date().getFullYear();

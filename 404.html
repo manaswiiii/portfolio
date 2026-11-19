@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="robots" content="noindex">
+  <title>Page not found · Manaswi Kalyan</title>
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caveat:wght@500;700&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="/styles.css">
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.add('js');
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') root.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+  <style>
+    .lost { min-height: 100vh; display: grid; place-items: center; padding: 48px 0; }
+    .lost .notebook { max-width: 640px; margin: 0 auto; }
+    .lost .stamp { position: static; display: inline-block; margin: 0 0 22px; --stamp-r: -8deg; font-size: 1.6rem; }
+    .lost h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.8rem, 5vw, 2.6rem); line-height: 1.1; margin-bottom: 16px; }
+    .lost .nb-steps { margin-bottom: 28px; }
+  </style>
+</head>
+<body>
+  <main class="lost">
+    <div class="container">
+      <article class="notebook">
+        <div class="nb-head"><span class="mono-label">Entry 404</span></div>
+        <p class="stamp in" aria-hidden="true">Null result<br><small>✓ verified</small></p>
+        <h1>This page was a null result.</h1>
+        <dl class="nb-steps">
+          <div>
+            <dt>Hypothesis</dt>
+            <dd>There's a page at this address.</dd>
+          </div>
+          <div>
+            <dt>Result</dt>
+            <dd>There isn't. I checked. It's not just noise.</dd>
+          </div>
+        </dl>
+        <a class="btn btn-yellow" href="/">← Back to the notebook</a>
+      </article>
+    </div>
+  </main>
+</body>
+</html>
